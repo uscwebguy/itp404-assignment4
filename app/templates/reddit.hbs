@@ -1,0 +1,40 @@
+<table >
+	<tr>
+		<td>Score</td>
+		<td>Title</td>
+		<td>Comment Count</td>
+		<td>Archived</td>
+	</tr>
+	{{#each model as |reddit|}}
+	<tr>
+		<td>
+			{{reddit.score}}
+		</td>
+		<td>
+			<a href="{{reddit.url}}">{{reddit.title}}</a>
+		</td>
+		<td>
+			{{reddit.num_comments}}
+		</td>
+		<td>
+			{{#if archived}}
+				Archived
+			{{else}}
+				Not archived
+			{{/if}}
+		</td>
+	</tr>
+	{{/each}}
+</table>
+
+<style>
+	table {
+		border-collapse: collapse;
+		 border: 1px solid black;
+	}
+
+	td {
+		 border: 1px solid black;
+		 padding:5px;
+	}
+</style>
